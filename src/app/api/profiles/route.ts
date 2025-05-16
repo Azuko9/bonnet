@@ -6,6 +6,7 @@ import { NextResponse } from "next/server";
 
 // GET /api/profiles : récupérer tous les profils
 export async function GET() {
+  console.log("===> API PROFILES GET CALLED <===");
   await dbConnect();
   const profiles = await Profile.find().lean();
   return NextResponse.json(profiles);
