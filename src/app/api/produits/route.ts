@@ -30,7 +30,6 @@ export async function POST(req: Request) {
     !body.description?.en ||
     !body.description?.es ||
     !body.marque ||
-    !body.price ||
     !body.imageUrl
   ) {
     return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });

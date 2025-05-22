@@ -15,7 +15,6 @@ export interface IProduit extends mongoose.Document {
     es: string;
   };
   marque: string;       // nom ou ID de la marque associée (adaptable selon ta logique)
-  price: number;        // prix du produit
   imageUrl: string;     // image du produit
   features: string[];   // liste de caractéristiques (optionnel)
   createdAt: Date;
@@ -34,7 +33,6 @@ const ProduitSchema = new Schema<IProduit>(
       es: { type: String, required: true },
     },
     marque: { type: String, required: true },
-    price: { type: Number, required: true },
     imageUrl: { type: String, required: true },
     features: { type: [String], required: false },
     createdAt: { type: Date, default: Date.now },
