@@ -9,12 +9,8 @@ export interface IMarque extends mongoose.Document {
     en: string; // ...en anglais
     es: string; // ...en espagnol
   };
-  description: {
-    fr: string;
-    en: string;
-    es: string;
-  };
-  logoUrl: string;    // URL du logo
+
+ imageUrl: string;    // URL du logo
   siteUrl: string;    // Lien externe (facultatif)
   createdAt: Date;
 }
@@ -26,12 +22,8 @@ const MarqueSchema = new Schema<IMarque>(
       en: { type: String, required: true },
       es: { type: String, required: true },
     },
-    description: {
-      fr: { type: String, required: true },
-      en: { type: String, required: true },
-      es: { type: String, required: true },
-    },
-    logoUrl: { type: String, required: true },
+
+   imageUrl: { type: String, required: true },
     siteUrl: { type: String, required: false },
     createdAt: { type: Date, default: Date.now },
   },

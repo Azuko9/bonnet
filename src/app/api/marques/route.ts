@@ -23,13 +23,8 @@ export async function POST(req: Request) {
 
   // Vérification des champs obligatoires
   if (
-    !body.name?.fr ||
-    !body.name?.en ||
-    !body.name?.es ||
-    !body.description?.fr ||
-    !body.description?.en ||
-    !body.description?.es ||
-    !body.logoUrl
+    !body.name ||
+    !body.imageUrl 
   ) {
     return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });
   }
