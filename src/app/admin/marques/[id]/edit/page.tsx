@@ -8,9 +8,7 @@ export default function EditMarquePage() {
     const id = params?.id as string;
 
     const [form, setForm] = useState({
-        name_fr: "",
-        name_en: "",
-        name_es: "",
+        name: "",
         imageUrl: "",
     });
     const [message, setMessage] = useState<string | null>(null);
@@ -26,9 +24,8 @@ export default function EditMarquePage() {
             if (res.ok) {
                 const marque = await res.json();
                 setForm({
-                    name_fr: marque.name?.fr || "",
-                    name_en: marque.name?.en || "",
-                    name_es: marque.name?.es || "",
+                    name: marque.name?.fr || "",
+
                     imageUrl: marque.imageUrl || "",
                 });
             }
@@ -54,9 +51,9 @@ export default function EditMarquePage() {
             },
             body: JSON.stringify({
                 name: {
-                    fr: form.name_fr,
-                    en: form.name_en,
-                    es: form.name_es,
+                    fr: form.name,
+                    en: form.name,
+                    es: form.name,
                 },
                 imageUrl: form.imageUrl,
             }),
@@ -77,9 +74,7 @@ export default function EditMarquePage() {
         <main className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
             <h1 className="text-xl font-bold mb-6">Modifier la marque</h1>
             <form className="space-y-4" onSubmit={handleSubmit}>
-                <input name="name_fr" placeholder="Nom (fr)" className="w-full p-2 border rounded" value={form.name_fr} onChange={handleChange} required />
-                <input name="name_en" placeholder="Nom (en)" className="w-full p-2 border rounded" value={form.name_en} onChange={handleChange} />
-                <input name="name_es" placeholder="Nom (es)" className="w-full p-2 border rounded" value={form.name_es} onChange={handleChange} />
+                <input name="name" placeholder="Nom (fr)" className="w-full p-2 border rounded" value={form.name} onChange={handleChange} required />
                 <input name="imageUrl" placeholder="URL de l’image" className="w-full p-2 border rounded" value={form.imageUrl} onChange={handleChange} required />
                 <button type="submit" className="bg-black text-white rounded px-4 py-2 hover:bg-yellow-400 hover:text-black transition">Enregistrer les modifications</button>
                 {message && <div className="text-center text-sm mt-2">{message}</div>}
