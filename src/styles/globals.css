@@ -1,0 +1,40 @@
+/* styles/style.css */
+* {
+  margin: 0;
+}
+
+body {
+  height: 100vh;
+  background-image: url(/img/house.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.abso {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  color: #ffffff;
+  font-family: monospace;
+  position: absolute;
+  bottom: 20px;
+}

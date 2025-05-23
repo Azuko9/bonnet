@@ -1,18 +1,55 @@
-// src/components/Footer.tsx
+"use client"; // 👈 Obligatoire pour utiliser useState
 
-export default function Footer() {
+import React, { useState } from "react";
+import styles from "../styles/components/footer.module.css";
+import clsx from "clsx";
+
+const Footer: React.FC = () => {
+    const [active, setActive] = useState(false);
+
     return (
-        <footer className="bg-gray-900 text-gray-200 py-4 mt-12">
-            <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-                <div>
-                    &copy; {new Date().getFullYear()} BONNET BIARRITZ. Tous droits réservés.
+        <footer className={styles.footer}>
+            <button
+                className={clsx(
+                    styles.footerButton,
+                    active && styles.footerButtonActive
+                )}
+                onClick={() => setActive(!active)}
+            />
+            <div
+                className={clsx(
+                    styles.footerContent,
+                    active && styles.footerContentVisible
+                )}
+            >
+                <div className={styles.footerLogo}>
+                    <img src="/img/LOGO_COLOR.png" className={styles.img} alt="" />
+                    <div>
+                        <a href="/contact">
+                            <p>BONNET</p>
+                        </a>
+                        <a href="https://www.google.com/maps/place/BONNET+Magasin+TV+-+HIFI+-+VIDEO/@43.469408,-1.5426891,17z/data=!3m1!4b1!4m6!3m5!1s0xd511535d6b12d8d:0x531d06240053c307!8m2!3d43.469408!4d-1.5426891!16s%2Fg%2F1tdq7b9g?entry=ttu&g_ep=EgoyMDI1MDQwNy4wIKXMDSoJLDEwMjExNDU1SAFQAw%3D%3D">
+                            <p>10 allée Marie Politzer 64200 Biarritz</p>
+                        </a>
+                        <a href="tel:+33559417777">
+                            <p>05 59 41 77 77</p>
+                        </a>
+                    </div>
                 </div>
-                <div className="text-xs mt-2 md:mt-0">
-                    <a href="/mentions-legales" className="hover:text-yellow-400 underline">
-                        Mentions légales
+                <div>
+                    <a href="/contact">
+                        <p>la société</p>
+                    </a>
+                    <a href="/contact">
+                        <p>contact</p>
+                    </a>
+                    <a href="/login">
+                        <p> 2025 Bonnet Magasin TV - HIFI - VIDEO</p>
                     </a>
                 </div>
             </div>
         </footer>
     );
-}
+};
+
+export default Footer;

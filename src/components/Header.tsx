@@ -1,40 +1,39 @@
-// src/components/Header.tsx
+import react from "react";
+import clsx from "clsx";
+import styles from "../styles/components/header.module.css";
 
-"use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-
-const navLinks = [
-    { href: "/", label: "Accueil" },
-    { href: "/contact", label: "Contact" },
-    { href: "/marques", label: "Marques" },
-    // { href: "/cinema", label: "Cinéma" }, // à ajouter plus tard
-    // { href: "/visio", label: "Visio-conférence" },
-];
-
-export default function Header() {
-    const pathname = usePathname();
-
+const Header: React.FC = () => {
     return (
-        <header className="bg-black text-white shadow">
-            <nav className="max-w-6xl mx-auto px-4 flex items-center h-16">
-                <div className="font-bold text-lg tracking-tight flex-1">
-                    <Link href="/">BONNET BIARRITZ</Link>
-                </div>
-                <ul className="flex space-x-6">
-                    {navLinks.map((link) => (
-                        <li key={link.href}>
-                            <Link
-                                href={link.href}
-                                className={`hover:text-yellow-400 transition ${pathname === link.href ? "underline text-yellow-400" : ""
-                                    }`}
-                            >
-                                {link.label}
-                            </Link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
+        <header className={clsx(styles.header, "abso")}>
+            <div className={clsx(styles.ongletA, "abso")}>
+                <img className={clsx(styles.logo)} src="/img/logo-b.png" alt="" />
+                <img
+                    className={clsx(styles.logo, styles.logoCircleLittle)}
+                    src="/img/logo-circle-little.png"
+                    alt=""
+                />
+                <img
+                    className={clsx(styles.logo, styles.logoCircleBig)}
+                    src="/img/logo-circle-big.png"
+                    alt=""
+                />
+                <p className={clsx(styles.textLogo, "abso")}>BONNET</p>
+            </div>
+
+            <div className={clsx(styles.ongletB, "abso")}>
+                <a href="/image&son">IMAGE & SON</a>
+            </div>
+            <div className={clsx(styles.ongletC, "abso")}>
+                <a href="service">SERVICE</a>
+            </div>
+            <div className={clsx(styles.ongletD, "abso")}>
+                <a href="/visioconference">VISIOCONFÉRENCE</a>
+            </div>
+            <div className={clsx(styles.ongletE, "abso")}>
+                <a href="/cinema">CINEMA</a>
+            </div>
         </header>
     );
-}
+};
+
+export default Header;

@@ -1,0 +1,228 @@
+.header {
+  margin: 20px;
+  width: 500px;
+  height: 500px;
+  z-index: 2;
+}
+
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 60px;
+  z-index: 6;
+  height: 100px;
+  transition: 1s;
+  transform-origin: 50% 60%;
+}
+
+.logo-b {
+  z-index: 7;
+  height: 100px;
+}
+
+.logoCircleLittle {
+  animation: 5s rotate-reverse;
+}
+
+.logoCircleBig {
+  animation: 5s rotate;
+}
+
+.ongletA {
+  z-index: -1;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  transition: 0.5s;
+  cursor: pointer;
+  border: #ffffff solid 2px;
+}
+
+.logoCircleLittle {
+  z-index: 1;
+  animation: s rotate-reverse;
+}
+
+.ongletA:hover .logoCircleLittle {
+  rotate: -360deg;
+}
+
+.logoCircleBig {
+  z-index: 1;
+  animation: 5s rotate;
+}
+
+.ongletA:hover .logoCircleBig {
+  rotate: 360deg;
+}
+
+.textLogo {
+  font-family: monospace;
+  bottom: 35px;
+  left: 100px;
+  font-size: 25px;
+  z-index: 7;
+  color: rgba(0, 0, 0, 0);
+  transition-duration: 1s;
+}
+
+.ongletA:hover .textLogo {
+  color: rgba(0, 0, 0, 1);
+}
+
+.ongletB {
+  z-index: -2;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #4a215b;
+  transition-duration: 1s;
+}
+
+.ongletA:hover ~ .ongletB {
+  width: 300px;
+  height: 300px;
+}
+
+.ongletB:hover {
+  width: 300px;
+  height: 300px;
+}
+
+.ongletC:hover ~ .ongletB {
+  width: 300px;
+  height: 300px;
+}
+.ongletD:hover ~ .ongletB {
+  width: 300px;
+  height: 300px;
+}
+
+.ongletE:hover ~ .ongletB {
+  width: 300px;
+  height: 300px;
+}
+
+.ongletC {
+  z-index: -3;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #9c3953;
+  transition-duration: 0.8s;
+}
+
+.ongletA:hover ~ .ongletC {
+  width: 400px;
+  height: 400px;
+}
+
+.ongletB:hover ~ .ongletC {
+  width: 400px;
+  height: 400px;
+}
+
+.ongletC:hover {
+  width: 400px;
+  height: 400px;
+}
+
+.ongletD {
+  z-index: -4;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #eb5b44;
+  transition-duration: 0.6s;
+}
+
+.ongletA:hover ~ .ongletD {
+  width: 500px;
+  height: 500px;
+}
+
+.ongletB:hover ~ .ongletD {
+  width: 500px;
+  height: 500px;
+}
+
+.ongletC:hover ~ .ongletD {
+  width: 500px;
+  height: 500px;
+}
+
+.ongletD:hover {
+  width: 500px;
+  height: 500px;
+}
+
+.ongletE {
+  z-index: -5;
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  background-color: #ee7539;
+  transition-duration: 0.4s;
+}
+
+.ongletA:hover ~ .ongletE {
+  width: 600px;
+  height: 600px;
+}
+
+.ongletB:hover ~ .ongletE {
+  width: 600px;
+  height: 600px;
+}
+
+.ongletC:hover ~ .ongletE {
+  width: 600px;
+  height: 600px;
+}
+
+.ongletD:hover ~ .ongletE {
+  width: 600px;
+  height: 600px;
+}
+
+.ongletE:hover {
+  width: 600px;
+  height: 600px;
+}
+
+/* @keyframes rotate {
+  20% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: 360deg;
+  }
+
+  70% {
+    rotate: 360deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+}
+
+@keyframes rotate-reverse {
+  20% {
+    rotate: 0deg;
+  }
+
+  50% {
+    rotate: -360deg;
+  }
+
+  70% {
+    rotate: -360deg;
+  }
+
+  100% {
+    rotate: 0deg;
+  }
+} */

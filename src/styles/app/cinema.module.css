@@ -1,0 +1,9 @@
+.background {
+    background-image: url(../../../public/img/cinecouv.jpeg);
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
