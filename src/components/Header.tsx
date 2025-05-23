@@ -1,4 +1,4 @@
-import react from "react";
+
 import clsx from "clsx";
 import styles from "../styles/components/header.module.css";
 
