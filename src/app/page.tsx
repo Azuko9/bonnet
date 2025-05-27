@@ -2,6 +2,8 @@
 
 import React from "react";
 
+
+
 type Info = {
   _id: string;
   title: {
