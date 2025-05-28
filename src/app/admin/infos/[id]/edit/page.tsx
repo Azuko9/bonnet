@@ -9,8 +9,6 @@ export default function EditInfoPage() {
 
     const [form, setForm] = useState({
         title_fr: "",
-        title_en: "",
-        title_es: "",
         imageUrl: "",
         link: "",
     });
@@ -28,8 +26,6 @@ export default function EditInfoPage() {
                 const info = await res.json();
                 setForm({
                     title_fr: info.title?.fr || "",
-                    title_en: info.title?.en || "",
-                    title_es: info.title?.es || "",
                     imageUrl: info.imageUrl || "",
                     link: info.link || "",
                 });
@@ -57,8 +53,6 @@ export default function EditInfoPage() {
             body: JSON.stringify({
                 title: {
                     fr: form.title_fr,
-                    en: form.title_en,
-                    es: form.title_es,
                 },
                 imageUrl: form.imageUrl,
                 link: form.link,
@@ -81,8 +75,6 @@ export default function EditInfoPage() {
             <h1 className="text-xl font-bold mb-6">Modifier l’info</h1>
             <form className="space-y-4" onSubmit={handleSubmit}>
                 <input name="title_fr" placeholder="Titre (fr)" className="w-full p-2 border rounded" value={form.title_fr} onChange={handleChange} required />
-                <input name="title_en" placeholder="Titre (en)" className="w-full p-2 border rounded" value={form.title_en} onChange={handleChange} required />
-                <input name="title_es" placeholder="Titre (es)" className="w-full p-2 border rounded" value={form.title_es} onChange={handleChange} required />
                 <input name="imageUrl" placeholder="URL de l’image" className="w-full p-2 border rounded" value={form.imageUrl} onChange={handleChange} required />
                 <input name="link" placeholder="Lien (optionnel)" className="w-full p-2 border rounded" value={form.link} onChange={handleChange} />
                 <button type="submit" className="bg-black text-white rounded px-4 py-2 hover:bg-yellow-400 hover:text-black transition">Enregistrer les modifications</button>

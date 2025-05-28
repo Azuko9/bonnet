@@ -4,29 +4,25 @@ import mongoose, { Schema } from "mongoose";
 
 // Interface TypeScript pour documenter chaque profil (pour l'autocomplétion et la sécurité du code)
 export interface IProfile extends mongoose.Document {
-  firstName: string; // Prénom du profil
-  lastName: string; // Nom du profil
+  firstName: string; 
+  lastName: string; 
   profession: {
-    // Métier/profession, traduit dans chaque langue
     fr: string;
-    en: string;
-    es: string;
   };
-  photoUrl: string; // URL de la photo du profil
-  phone: string; // Téléphone
-  email: string; // Email
+  photoUrl: string; 
+  phone: string; 
+  email: string; 
 }
 
 // Le schéma Mongoose
 const ProfileSchema = new Schema<IProfile>({
-  firstName: { type: String, required: true }, // Prénom obligatoire
-  lastName: { type: String, required: true }, // Nom obligatoire
+  firstName: { type: String, required: true }, 
+  lastName: { type: String, required: true }, 
   profession: {
     fr: { type: String, required: true },
-    en: { type: String, required: true },
-    es: { type: String, required: true },
+
   },
-  photoUrl: { type: String, required: true }, // URL de la photo (image publique ou stockée dans /public)
+  photoUrl: { type: String, required: true }, 
   phone: { type: String },
   email: { type: String },
 });

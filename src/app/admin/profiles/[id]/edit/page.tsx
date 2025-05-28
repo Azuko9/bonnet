@@ -68,8 +68,6 @@ export default function EditProfilePage() {
                 lastName: form.lastName,
                 profession: {
                     fr: form.profession_fr,
-                    en: form.profession_en,
-                    es: form.profession_es,
                 },
                 photoUrl: form.photoUrl,
                 phone: form.phone,
@@ -95,8 +93,6 @@ export default function EditProfilePage() {
                 <input name="firstName" placeholder="Prénom" className="w-full p-2 border rounded" value={form.firstName} onChange={handleChange} required />
                 <input name="lastName" placeholder="Nom" className="w-full p-2 border rounded" value={form.lastName} onChange={handleChange} required />
                 <input name="profession_fr" placeholder="Profession (fr)" className="w-full p-2 border rounded" value={form.profession_fr} onChange={handleChange} required />
-                <input name="profession_en" placeholder="Profession (en)" className="w-full p-2 border rounded" value={form.profession_en} onChange={handleChange} required />
-                <input name="profession_es" placeholder="Profession (es)" className="w-full p-2 border rounded" value={form.profession_es} onChange={handleChange} required />
                 <input name="photoUrl" placeholder="URL de la photo" className="w-full p-2 border rounded" value={form.photoUrl} onChange={handleChange} />
                 <input name="phone" placeholder="Téléphone (optionnel)" className="w-full p-2 border rounded" value={form.phone} onChange={handleChange} />
                 <input name="email" placeholder="Email (optionnel)" className="w-full p-2 border rounded" value={form.email} onChange={handleChange} />

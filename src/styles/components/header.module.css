@@ -80,7 +80,7 @@
   transition-duration: 1s;
 }
 
-.ongletA:hover ~ .ongletB {
+.ongletA:hover~.ongletB {
   width: 300px;
   height: 300px;
 }
@@ -90,16 +90,17 @@
   height: 300px;
 }
 
-.ongletC:hover ~ .ongletB {
-  width: 300px;
-  height: 300px;
-}
-.ongletD:hover ~ .ongletB {
+.ongletC:hover~.ongletB {
   width: 300px;
   height: 300px;
 }
 
-.ongletE:hover ~ .ongletB {
+.ongletD:hover~.ongletB {
+  width: 300px;
+  height: 300px;
+}
+
+.ongletE:hover~.ongletB {
   width: 300px;
   height: 300px;
 }
@@ -113,12 +114,12 @@
   transition-duration: 0.8s;
 }
 
-.ongletA:hover ~ .ongletC {
+.ongletA:hover~.ongletC {
   width: 400px;
   height: 400px;
 }
 
-.ongletB:hover ~ .ongletC {
+.ongletB:hover~.ongletC {
   width: 400px;
   height: 400px;
 }
@@ -137,17 +138,17 @@
   transition-duration: 0.6s;
 }
 
-.ongletA:hover ~ .ongletD {
+.ongletA:hover~.ongletD {
   width: 500px;
   height: 500px;
 }
 
-.ongletB:hover ~ .ongletD {
+.ongletB:hover~.ongletD {
   width: 500px;
   height: 500px;
 }
 
-.ongletC:hover ~ .ongletD {
+.ongletC:hover~.ongletD {
   width: 500px;
   height: 500px;
 }
@@ -166,22 +167,22 @@
   transition-duration: 0.4s;
 }
 
-.ongletA:hover ~ .ongletE {
+.ongletA:hover~.ongletE {
   width: 600px;
   height: 600px;
 }
 
-.ongletB:hover ~ .ongletE {
+.ongletB:hover~.ongletE {
   width: 600px;
   height: 600px;
 }
 
-.ongletC:hover ~ .ongletE {
+.ongletC:hover~.ongletE {
   width: 600px;
   height: 600px;
 }
 
-.ongletD:hover ~ .ongletE {
+.ongletD:hover~.ongletE {
   width: 600px;
   height: 600px;
 }
@@ -190,6 +191,8 @@
   width: 600px;
   height: 600px;
 }
+
+
 
 /* @keyframes rotate {
   20% {

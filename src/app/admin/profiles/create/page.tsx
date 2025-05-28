@@ -8,8 +8,6 @@ export default function CreateProfilePage() {
         firstName: "",
         lastName: "",
         profession_fr: "",
-        profession_en: "",
-        profession_es: "",
         photoUrl: "",
         phone: "",
         email: "",
@@ -37,8 +35,7 @@ export default function CreateProfilePage() {
                 lastName: form.lastName,
                 profession: {
                     fr: form.profession_fr,
-                    en: form.profession_en,
-                    es: form.profession_es,
+
                 },
                 photoUrl: form.photoUrl,
                 phone: form.phone,
@@ -52,8 +49,6 @@ export default function CreateProfilePage() {
                 firstName: "",
                 lastName: "",
                 profession_fr: "",
-                profession_en: "",
-                profession_es: "",
                 photoUrl: "",
                 phone: "",
                 email: "",
@@ -93,22 +88,7 @@ export default function CreateProfilePage() {
                     onChange={handleChange}
                     required
                 />
-                <input
-                    name="profession_en"
-                    placeholder="Profession (en)"
-                    className="w-full p-2 border rounded"
-                    value={form.profession_en}
-                    onChange={handleChange}
-                    required
-                />
-                <input
-                    name="profession_es"
-                    placeholder="Profession (es)"
-                    className="w-full p-2 border rounded"
-                    value={form.profession_es}
-                    onChange={handleChange}
-                    required
-                />
+
                 <input
                     name="photoUrl"
                     placeholder="URL de la photo"

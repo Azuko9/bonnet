@@ -5,13 +5,11 @@ import mongoose, { Schema } from "mongoose";
 // Interface TypeScript pour un document Marque
 export interface IMarque extends mongoose.Document {
   name: {
-    fr: string; // Nom de la marque en français
-    en: string; // ...en anglais
-    es: string; // ...en espagnol
+    fr: string; 
   };
 
- imageUrl: string;    // URL du logo
-  siteUrl: string;    // Lien externe (facultatif)
+ imageUrl: string;    
+  siteUrl: string;    
   createdAt: Date;
 }
 
@@ -19,8 +17,6 @@ const MarqueSchema = new Schema<IMarque>(
   {
     name: {
       fr: { type: String, required: true },
-      en: { type: String, required: true },
-      es: { type: String, required: true },
     },
 
    imageUrl: { type: String, required: true },

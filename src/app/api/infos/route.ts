@@ -25,8 +25,6 @@ export async function POST(req: Request) {
   // Vérification des champs obligatoires
   if (
     !body.title?.fr ||
-    !body.title?.en ||
-    !body.title?.es ||
     !body.imageUrl
   ) {
     return NextResponse.json({ error: "Champs obligatoires manquants" }, { status: 400 });

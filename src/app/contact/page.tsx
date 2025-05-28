@@ -9,8 +9,6 @@ type Profile = {
     lastName: string;
     profession: {
         fr: string;
-        en: string;
-        es: string;
     };
     photoUrl?: string;
     phone?: string;

@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 type Marque = {
     _id: string;
-    name: { fr: string; en?: string; es?: string };
+    name: { fr: string };
     imageUrl: string;
 };
 

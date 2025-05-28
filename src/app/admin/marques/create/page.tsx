@@ -29,8 +29,6 @@ export default function CreateMarquePage() {
             body: JSON.stringify({
                 name: {
                     fr: form.name,
-                    en: form.name,
-                    es: form.name,
                 },
                 imageUrl: form.imageUrl,
             }),

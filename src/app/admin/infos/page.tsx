@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 
 type Info = {
     _id: string;
-    title: { fr: string; en: string; es: string };
+    title: { fr: string };
     imageUrl: string;
     link?: string;
 };
