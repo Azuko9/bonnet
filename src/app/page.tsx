@@ -81,7 +81,10 @@ export default async function HomePage() {
         <h2 className="text-2xl font-bold mb-6">Nos Marques</h2>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-4">
           {marques.length === 0 ? (
-            <div>Aucune marque disponible.</div>
+            <>
+              <div>Aucune marque disponible.</div>
+              <div className="bg-yellow-400 text-black p-8">TEST TAILWIND</div>
+            </>
           ) : (
             marques.map((marque) => (
               <div key={marque._id} className="bg-white rounded-xl shadow p-4 flex flex-col items-center">
@@ -91,6 +94,8 @@ export default async function HomePage() {
                   className="w-28 h-16 object-contain mb-2"
                 />
                 <div className="font-semibold text-center">{marque.name.fr}</div>
+
+
               </div>
             ))
           )}
