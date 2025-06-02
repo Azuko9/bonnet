@@ -31,13 +31,12 @@ export default function AdminLoginPage() {
     };
 
     return (
-        <main className="max-w-sm mx-auto mt-16 p-6 bg-white rounded-xl shadow">
-            <h1 className="text-xl font-bold mb-6 text-center">Connexion admin</h1>
+        <main>
+            <h1>Connexion admin</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <input
                     type="email"
                     placeholder="Email"
-                    className="w-full p-2 border rounded"
                     value={email}
                     onChange={e => setEmail(e.target.value)}
                     required
@@ -45,18 +44,16 @@ export default function AdminLoginPage() {
                 <input
                     type="password"
                     placeholder="Mot de passe"
-                    className="w-full p-2 border rounded"
                     value={password}
                     onChange={e => setPassword(e.target.value)}
                     required
                 />
                 <button
                     type="submit"
-                    className="bg-black text-white rounded px-4 py-2 w-full hover:bg-yellow-400 hover:text-black transition"
                 >
                     Connexion
                 </button>
-                {message && <div className="text-center text-sm mt-2">{message}</div>}
+                {message && <div>{message}</div>}
             </form>
         </main>
     );

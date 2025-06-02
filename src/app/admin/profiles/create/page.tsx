@@ -62,13 +62,12 @@ export default function CreateProfilePage() {
     };
 
     return (
-        <main className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-            <h1 className="text-xl font-bold mb-6">Créer un profil</h1>
-            <form className="space-y-3" onSubmit={handleSubmit}>
+        <main>
+            <h1>Créer un profil</h1>
+            <form onSubmit={handleSubmit}>
                 <input
                     name="firstName"
                     placeholder="Prénom"
-                    className="w-full p-2 border rounded"
                     value={form.firstName}
                     onChange={handleChange}
                     required
@@ -76,7 +75,6 @@ export default function CreateProfilePage() {
                 <input
                     name="lastName"
                     placeholder="Nom"
-                    className="w-full p-2 border rounded"
                     value={form.lastName}
                     onChange={handleChange}
                     required
@@ -84,14 +82,13 @@ export default function CreateProfilePage() {
                 <input
                     name="profession_fr"
                     placeholder="Profession (fr)"
-                    className="w-full p-2 border rounded"
                     value={form.profession_fr}
                     onChange={handleChange}
                     required
                 />
 
                 {/* ImageUploader Cloudinary Composant Cloudinary pour uploader une image */}
-                <label className="block font-medium mt-2">Photo du profil</label>
+                <label>Photo du profil</label>
                 <ImageUploader onUploaded={url => setForm(f => ({ ...f, photoUrl: url }))} />
                 {form.photoUrl}
 
@@ -99,24 +96,21 @@ export default function CreateProfilePage() {
                 <input
                     name="phone"
                     placeholder="Téléphone (optionnel)"
-                    className="w-full p-2 border rounded"
                     value={form.phone}
                     onChange={handleChange}
                 />
                 <input
                     name="email"
                     placeholder="Email (optionnel)"
-                    className="w-full p-2 border rounded"
                     value={form.email}
                     onChange={handleChange}
                 />
                 <button
                     type="submit"
-                    className="bg-black text-white rounded px-4 py-2 w-full hover:bg-yellow-400 hover:text-black transition"
                 >
                     Créer le profil
                 </button>
-                {message && <div className="text-center text-sm mt-2">{message}</div>}
+                {message && <div>{message}</div>}
             </form>
         </main>
     );

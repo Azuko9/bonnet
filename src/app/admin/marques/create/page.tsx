@@ -45,13 +45,13 @@ export default function CreateMarquePage() {
     };
 
     return (
-        <main className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-            <h1 className="text-xl font-bold mb-6">Ajouter une marque</h1>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-                <input name="name" placeholder="Nom" className="w-full p-2 border rounded" value={form.name} onChange={handleChange} required />
-                <input name="imageUrl" placeholder="URL de l’image" className="w-full p-2 border rounded" value={form.imageUrl} onChange={handleChange} required />
-                <button type="submit" className="bg-black text-white rounded px-4 py-2 hover:bg-yellow-400 hover:text-black transition">Créer la marque</button>
-                {message && <div className="text-center text-sm mt-2">{message}</div>}
+        <main>
+            <h1>Ajouter une marque</h1>
+            <form onSubmit={handleSubmit}>
+                <input name="name" placeholder="Nom" value={form.name} onChange={handleChange} required />
+                <input name="imageUrl" placeholder="URL de l’image" value={form.imageUrl} onChange={handleChange} required />
+                <button type="submit">Créer la marque</button>
+                {message && <div>{message}</div>}
             </form>
         </main>
     );

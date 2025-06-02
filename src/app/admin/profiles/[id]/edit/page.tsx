@@ -81,31 +81,30 @@ export default function EditProfilePage() {
         }
     };
 
-    if (loading) return <div className="text-center mt-20">Chargement…</div>;
+    if (loading) return <div>Chargement…</div>;
 
     return (
-        <main className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-            <h1 className="text-xl font-bold mb-6">Modifier le profil</h1>
-            <form className="space-y-3" onSubmit={handleSubmit}>
-                <input name="firstName" placeholder="Prénom" className="w-full p-2 border rounded" value={form.firstName} onChange={handleChange} required />
-                <input name="lastName" placeholder="Nom" className="w-full p-2 border rounded" value={form.lastName} onChange={handleChange} required />
-                <input name="profession_fr" placeholder="Profession (fr)" className="w-full p-2 border rounded" value={form.profession_fr} onChange={handleChange} required />
-                <label className="block font-medium mt-2">Photo du profil</label>
+        <main>
+            <h1>Modifier le profil</h1>
+            <form onSubmit={handleSubmit}>
+                <input name="firstName" placeholder="Prénom" value={form.firstName} onChange={handleChange} required />
+                <input name="lastName" placeholder="Nom" value={form.lastName} onChange={handleChange} required />
+                <input name="profession_fr" placeholder="Profession (fr)" value={form.profession_fr} onChange={handleChange} required />
+                <label>Photo du profil</label>
                 <ImageUploader onUploaded={url => setForm(f => ({ ...f, photoUrl: url }))} />
                 {form.photoUrl && (
                     <img
                         src={form.photoUrl}
                         alt="Aperçu"
                         style={{ width: 100, height: 100, objectFit: "cover" }}
-                        className="rounded shadow mt-2"
                     />
                 )}
-                <input name="phone" placeholder="Téléphone (optionnel)" className="w-full p-2 border rounded" value={form.phone} onChange={handleChange} />
-                <input name="email" placeholder="Email (optionnel)" className="w-full p-2 border rounded" value={form.email} onChange={handleChange} />
-                <button type="submit" className="bg-black text-white rounded px-4 py-2 w-full hover:bg-yellow-400 hover:text-black transition">
+                <input name="phone" placeholder="Téléphone (optionnel)" value={form.phone} onChange={handleChange} />
+                <input name="email" placeholder="Email (optionnel)" value={form.email} onChange={handleChange} />
+                <button type="submit">
                     Enregistrer les modifications
                 </button>
-                {message && <div className="text-center text-sm mt-2">{message}</div>}
+                {message && <div>{message}</div>}
             </form>
         </main>
     );

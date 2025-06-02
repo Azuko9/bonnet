@@ -74,14 +74,14 @@ export default function EditInfoPage() {
     if (loading) return <div className="text-center mt-20">Chargement…</div>;
 
     return (
-        <main className="max-w-md mx-auto mt-10 p-6 bg-white rounded-xl shadow">
-            <h1 className="text-xl font-bold mb-6">Modifier l’info</h1>
-            <form className="space-y-4" onSubmit={handleSubmit}>
-                <input name="title_fr" placeholder="Titre (fr)" className="w-full p-2 border rounded" value={form.title_fr} onChange={handleChange} required />
-                <input name="imageUrl" placeholder="URL de l’image" className="w-full p-2 border rounded" value={form.imageUrl} onChange={handleChange} required />
-                <input name="link" placeholder="Lien (optionnel)" className="w-full p-2 border rounded" value={form.link} onChange={handleChange} />
+        <main>
+            <h1>Modifier l’info</h1>
+            <form onSubmit={handleSubmit}>
+                <input name="title_fr" placeholder="Titre (fr)" value={form.title_fr} onChange={handleChange} required />
+                <input name="imageUrl" placeholder="URL de l’image" value={form.imageUrl} onChange={handleChange} required />
+                <input name="link" placeholder="Lien (optionnel)" value={form.link} onChange={handleChange} />
                 <button type="submit" className="bg-black text-white rounded px-4 py-2 hover:bg-yellow-400 hover:text-black transition">Enregistrer les modifications</button>
-                {message && <div className="text-center text-sm mt-2">{message}</div>}
+                {message && <div>{message}</div>}
             </form>
         </main>
     );
