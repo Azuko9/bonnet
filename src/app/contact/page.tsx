@@ -39,12 +39,13 @@ export default async function ContactPage() {
                     <div>Aucun contact pour le moment.</div>
                 ) : (
                     profiles.map((prof) => (
-                        <div key={prof._id} className="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+                        <div key={prof._id} className="bg-white rounded-xl shadow p-4 flex-col justify-center items-center">
                             {/* Affichage de la photo si présente */}
                             {prof.photoUrl && (
                                 <img
                                     src={prof.photoUrl}
                                     alt={`${prof.firstName} ${prof.lastName}`}
+                                    style={{ width: 100, height: 100, objectFit: "cover" }}
                                     className="w-24 h-24 rounded-full object-cover mb-2 border"
                                 />
                             )}
@@ -52,11 +53,16 @@ export default async function ContactPage() {
                             <div className="text-sm text-gray-500">{prof.profession.fr}</div>
                             {/* Lien téléphone si dispo */}
                             {prof.phone && (
-                                <a href={`tel:${prof.phone}`} className="text-blue-600 text-xs mt-2">{prof.phone}</a>
+                                <div>
+                                    <a href={`tel:${prof.phone}`} className="text-blue-600 text-xs mt-2">{prof.phone}</a>
+                                </div>
+
                             )}
                             {/* Lien email si dispo */}
                             {prof.email && (
-                                <a href={`mailto:${prof.email}`} className="text-blue-600 text-xs">{prof.email}</a>
+                                <div>
+                                    <a href={`mailto:${prof.email}`} className="text-blue-600 text-xs">{prof.email}</a>
+                                </div>
                             )}
                         </div>
                     ))

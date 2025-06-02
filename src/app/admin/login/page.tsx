@@ -20,10 +20,13 @@ export default function AdminLoginPage() {
             const { token } = await res.json();
             // Stocke le token dans localStorage (ou cookie si tu préfères)
             localStorage.setItem("adminToken", token);
-            setMessage("Connexion réussie !");
-            setTimeout(() => router.push("/admin"), 1000); // Redirige vers dashboard admin
+            setTimeout(() => router.push("/admin")); // Redirige vers dashboard admin
         } else {
-            setMessage("Identifiants invalides !");
+            alert("Identifiants invalides !");
+            setTimeout(() => {
+                window.location.href = "/admin/login";
+            });
+
         }
     };
 

@@ -55,7 +55,7 @@ export default async function HomePage() {
           {infos.map((info) => (
             <div
               key={info._id}
-              className="bg-white rounded-2xl shadow-lg p-4 flex flex-col items-center hover:shadow-xl transition group"
+              className="bg-white rounded-2xl shadow-lg p-4 flex-col items-center hover:shadow-xl transition group"
             >
               <img
                 src={info.imageUrl}

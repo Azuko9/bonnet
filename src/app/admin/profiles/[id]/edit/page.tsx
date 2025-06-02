@@ -1,4 +1,5 @@
 "use client";
+import ImageUploader from "@/components/ImageUploader";
 import { useEffect, useState } from "react";
 import { useRouter, useParams } from "next/navigation";
 
@@ -11,14 +12,12 @@ export default function EditProfilePage() {
         firstName: "",
         lastName: "",
         profession_fr: "",
-        profession_en: "",
-        profession_es: "",
         photoUrl: "",
         phone: "",
         email: "",
     });
     const [message, setMessage] = useState<string | null>(null);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(true); // Indique si les données sont en cours de chargement
 
     // Charge le profil existant
     useEffect(() => {
@@ -36,8 +35,6 @@ export default function EditProfilePage() {
                     firstName: prof.firstName || "",
                     lastName: prof.lastName || "",
                     profession_fr: prof.profession?.fr || "",
-                    profession_en: prof.profession?.en || "",
-                    profession_es: prof.profession?.es || "",
                     photoUrl: prof.photoUrl || "",
                     phone: prof.phone || "",
                     email: prof.email || "",
@@ -77,7 +74,7 @@ export default function EditProfilePage() {
 
         if (res.ok) {
             setMessage("Profil modifié avec succès !");
-            setTimeout(() => router.push("/admin/profiles"), 1200);
+            setTimeout(() => router.push("/admin/profiles"), 1200); // Redirige vers la liste des profils
         } else {
             const data = await res.json();
             setMessage(data.error || "Erreur lors de la modification");
@@ -93,7 +90,16 @@ export default function EditProfilePage() {
                 <input name="firstName" placeholder="Prénom" className="w-full p-2 border rounded" value={form.firstName} onChange={handleChange} required />
                 <input name="lastName" placeholder="Nom" className="w-full p-2 border rounded" value={form.lastName} onChange={handleChange} required />
                 <input name="profession_fr" placeholder="Profession (fr)" className="w-full p-2 border rounded" value={form.profession_fr} onChange={handleChange} required />
-                <input name="photoUrl" placeholder="URL de la photo" className="w-full p-2 border rounded" value={form.photoUrl} onChange={handleChange} />
+                <label className="block font-medium mt-2">Photo du profil</label>
+                <ImageUploader onUploaded={url => setForm(f => ({ ...f, photoUrl: url }))} />
+                {form.photoUrl && (
+                    <img
+                        src={form.photoUrl}
+                        alt="Aperçu"
+                        style={{ width: 100, height: 100, objectFit: "cover" }}
+                        className="rounded shadow mt-2"
+                    />
+                )}
                 <input name="phone" placeholder="Téléphone (optionnel)" className="w-full p-2 border rounded" value={form.phone} onChange={handleChange} />
                 <input name="email" placeholder="Email (optionnel)" className="w-full p-2 border rounded" value={form.email} onChange={handleChange} />
                 <button type="submit" className="bg-black text-white rounded px-4 py-2 w-full hover:bg-yellow-400 hover:text-black transition">

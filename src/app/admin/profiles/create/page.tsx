@@ -1,4 +1,5 @@
 "use client";
+import ImageUploader from "@/components/ImageUploader";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
@@ -89,13 +90,12 @@ export default function CreateProfilePage() {
                     required
                 />
 
-                <input
-                    name="photoUrl"
-                    placeholder="URL de la photo"
-                    className="w-full p-2 border rounded"
-                    value={form.photoUrl}
-                    onChange={handleChange}
-                />
+                {/* ImageUploader Cloudinary Composant Cloudinary pour uploader une image */}
+                <label className="block font-medium mt-2">Photo du profil</label>
+                <ImageUploader onUploaded={url => setForm(f => ({ ...f, photoUrl: url }))} />
+                {form.photoUrl}
+
+
                 <input
                     name="phone"
                     placeholder="Téléphone (optionnel)"

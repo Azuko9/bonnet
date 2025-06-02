@@ -28,6 +28,7 @@ export default function EditInfoPage() {
                     title_fr: info.title?.fr || "",
                     imageUrl: info.imageUrl || "",
                     link: info.link || "",
+
                 });
             }
             setLoading(false);
@@ -56,6 +57,7 @@ export default function EditInfoPage() {
                 },
                 imageUrl: form.imageUrl,
                 link: form.link,
+
             }),
         });
 
@@ -64,7 +66,8 @@ export default function EditInfoPage() {
             setTimeout(() => router.push("/admin/infos"), 1200);
         } else {
             const data = await res.json();
-            setMessage(data.error || "Erreur lors de la modification");
+            alert(data.error || "Session expirée, veuillez vous reconnecter.");
+            setTimeout(() => router.push("/admin/login"));
         }
     };
 

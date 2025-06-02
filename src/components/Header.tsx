@@ -24,7 +24,7 @@ const Header: React.FC = () => {
                 <a href="/image&son">IMAGE & SON</a>
             </div>
             <div className={clsx(styles.ongletC, "abso")}>
-                <a href="service">SERVICE</a>
+                <a className="abso" href="service">SERVICE</a>
             </div>
             <div className={clsx(styles.ongletD, "abso")}>
                 <a href="/visioconference">VISIOCONFÉRENCE</a>

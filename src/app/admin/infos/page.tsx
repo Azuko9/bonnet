@@ -39,7 +39,10 @@ export default function AdminInfosPage() {
             setInfos(infos.filter((i) => i._id !== id));
             setMessage("Info supprimée.");
         } else {
+            const data = await res.json();
             setMessage("Erreur lors de la suppression");
+            alert(data.error || "Session expirée, veuillez vous reconnecter.");
+            setTimeout(() => router.push("/admin/login"));
         }
     }
 
@@ -66,8 +69,8 @@ export default function AdminInfosPage() {
                     <tbody>
                         {infos.map((info) => (
                             <tr key={info._id} className="border-b">
-                                <td className="p-2">
-                                    <img src={info.imageUrl} className="w-16 h-10 rounded object-cover" />
+                                <td className="p-2 w-16 h-16 object-cover">
+                                    <img src={info.imageUrl} />
                                 </td>
                                 <td className="p-2">{info.title.fr}</td>
                                 <td className="p-2 flex gap-2">
